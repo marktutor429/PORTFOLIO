@@ -1,0 +1,453 @@
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #060913; /* Ultra clean space-dark background */
+    color: #e2e8f0; /* Balanced body text weight readability */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CONTAINER SETUP */
+.portfolio-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT SIDE (FIXED & BALANCED) */
+.left-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 38%;
+    height: 100vh;
+    padding: 4.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(30, 41, 59, 0.5);
+    background-color: #03060e;
+    z-index: 10;
+}
+
+/* PERFECT CIRCLE AVATAR - LARGER SIZE */
+.avatar-container {
+    position: relative;
+    width: 145px;
+    height: 145px;
+    margin-bottom: 2.5rem;
+}
+
+.avatar-glow {
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, #38bdf8, #0369a1);
+    border-radius: 50%;
+    opacity: 0.35;
+    filter: blur(8px);
+}
+
+.avatar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(56, 189, 248, 0.7);
+    overflow: hidden;
+    background-color: #0f172a;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TYPOGRAPHY HIERARCHY */
+.profile-name {
+    font-size: 2.6rem;
+    font-weight: 800; /* Extra bold highlight for profile authority */
+    color: #ffffff;
+    letter-spacing: -1px;
+    line-height: 1.15;
+}
+
+.profile-status {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.6rem;
+}
+
+.profile-status h2 {
+    font-size: 1rem;
+    font-weight: 600; /* Bold highlighted title */
+    color: #cbd5e1; /* Brighter slate for prominent visual weight */
+}
+
+/* PULSING RADAR PILOT BADGE */
+.status-badge {
+    font-size: 0.65rem;
+    font-weight: 800; /* Maximum bold visibility */
+    letter-spacing: 1px;
+    color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.12); /* Slightly darker fill for better background separation */
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    display: inline-block;
+    animation: radarPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes radarPulse {
+    0% { transform: scale(0.8); opacity: 0.5; box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 4px rgba(56, 189, 248, 0); }
+    100% { transform: scale(0.8); opacity: 0.5; box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+.profile-bio {
+    margin-top: 1.2rem;
+    color: #94a3b8; /* Enhanced legibility */
+    font-size: 0.95rem;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+/* HIGHLY PRECISE MINIMAL NAV SYSTEM */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #64748b; /* Sharper base link structure */
+    transition: all 0.3s ease;
+}
+
+.nav-num {
+    font-size: 0.75rem;
+    font-weight: 800; /* Bold index emphasis */
+    letter-spacing: 1px;
+    width: 20px;
+}
+
+.nav-line {
+    height: 1px;
+    width: 30px;
+    background-color: #334155;
+    margin: 0 1rem;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-text {
+    font-size: 0.8rem;
+    font-weight: 800; /* Bold textual highlights */
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.nav-links a:hover .nav-line {
+    width: 60px;
+    background-color: #38bdf8;
+}
+
+/* FOOTER ARCHITECTURE (LEFT-SIDE WITH ICON ALIGNMENTS) */
+.footer-wrapper {
+    margin-top: auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem; /* Marginally expanded space between link units */
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon-btn {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem; /* Crisp padding between icon and text label */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* ADJUSTED: Custom vector image framework scaled higher */
+.social-icon-btn .icon {
+    width: 22px;   /* Increased from 16px to 22px */
+    height: 22px;  /* Increased from 16px to 22px */
+    transition: stroke 0.2s ease;
+}
+
+/* Micro-interaction updates on hovering over icons */
+.social-icon-btn:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.social-icon-btn:hover .icon {
+    stroke: #38bdf8; /* Illuminates the active icon frame in cyan */
+}
+
+.footer-credit {
+    font-size: 0.75rem;
+    color: #475569;
+    border-top: 1px solid rgba(30, 41, 59, 0.4);
+    padding-top: 1.2rem;
+    font-weight: 500;
+}
+
+/* RIGHT SIDE (SCROLLING VIEWPORT) */
+.right-side {
+    margin-left: 38%; 
+    width: 62%;
+    padding: 6rem 7rem;
+}
+
+.content-section {
+    padding-bottom: 8rem;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    font-weight: 800; /* Premium high bold accent highlight */
+    background-color: rgba(56, 189, 248, 0.05); /* Highlight backdrop box */
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.content-section h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 1.2rem 0 1.5rem 0;
+    font-weight: 700; /* Extra crisp section title */
+}
+
+/* SKILLS GRID & TAGS */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background-color: #0a0f1d;
+    border: 1px solid #334155; /* Higher border contrast profile */
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #ffffff; /* Stark bright white for text items */
+    font-weight: 600; /* Bold core tools */
+}
+
+/* PROJECT CARDS W/ INLINE LINK ALIGNMENT */
+.project-card {
+    background-color: #0a0f1d;
+    border: 1px solid #1e293b;
+    padding: 2.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(3, 6, 14, 0.6);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.project-card h4 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 700; /* Prominent project name highlights */
+}
+
+/* REFERENCE THEMED VIEW BUTTONS */
+.project-link {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 0.7rem;
+    font-weight: 800; /* Heavy bold high-contrast link */
+    letter-spacing: 1.5px;
+    border: 1px solid #334155;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background-color: rgba(15, 23, 42, 0.6);
+    transition: all 0.2s ease;
+}
+
+.project-card:hover .project-link {
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.6);
+    background-color: rgba(56, 189, 248, 0.08);
+}
+
+.project-link:hover {
+    transform: scale(1.05);
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.project-tech {
+    font-size: 0.8rem;
+    color: #38bdf8; /* Glowing cyan accent highlight */
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+/* EMAIL INTERACTION BUTTON */
+.email-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 4px;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.email-btn:hover {
+    color: #38bdf8;
+}
+
+/* ==========================================================================
+   DYNAMIC TERMINAL DOCK FOOTER
+   ========================================================================= */
+.main-footer {
+    border-top: 1px solid rgba(30, 41, 59, 0.6);
+    padding-top: 3.5rem;
+    margin-top: 3rem;
+}
+
+.system-status-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background-color: #03060e;
+    border: 1px solid rgba(51, 65, 85, 0.3);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3.5rem;
+}
+
+.status-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.status-label {
+    font-size: 0.65rem;
+    color: #475569;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.status-value {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.highlight-cyan {
+    color: #38bdf8;
+}
+
+/* BASE CLOSURE LINES */
+.sub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #334155;
+}
+
+.footer-quote {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #475569;
+}
+
+.copyright-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE FLUID MEDIA QUERIES */
+@media (max-width: 1200px) {
+    .left-side { padding: 4rem 3rem; width: 40%; }
+    .right-side { margin-left: 40%; width: 60%; padding: 5rem 4rem; }
+    .profile-name { font-size: 2.2rem; }
+}
+
+@media (max-width: 900px) {
+    .portfolio-container { flex-direction: column; }
+    .left-side {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 4rem 2rem;
+        border-right: none;
+        border-bottom: 1px solid #1e293b;
+    }
+    .right-side { margin-left: 0; width: 100%; padding: 4rem 2rem; }
+    .nav-links { margin: 2.5rem 0; }
+    .footer-wrapper { margin-top: 2rem; }
+    .content-section { padding-bottom: 4rem; }
+    .social-links { gap: 1.75rem; } /* Expanded wrap buffer spacing on small screens */
+}
+
+@media (max-width: 650px) {
+    .system-status-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 1.2rem;
+    }
+    .sub-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+}
